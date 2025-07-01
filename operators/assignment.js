@@ -5,4 +5,5 @@ salary -= 10
 salary /= 10
 salary *= 10
 salary %= 10
+salary **= 10
 console.log(salary)
