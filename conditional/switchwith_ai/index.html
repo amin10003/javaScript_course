@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>UK Academic Year Finder</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #333;
+      text-align: center;
+      padding: 50px;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: sans-serif;
+      text-shadow: 0 1px 2px #000;
+      color: #fff;
+      box-shadow: 0 0 10px #000;
+      border-radius: 20px;
+      gap: 2rem;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+      margin-top: 10px;
+      border-radius: 10px;
+      background-color: transparent;
+      font-size: 1.2rem;
+      width: 220px;
+    }
+    input:focus{
+        outline-style: 0;
+    }
+    #result {
+      margin-top: 20px;
+      font-weight: bold;
+      color: #fff;
+      font-size: 20px;
+      font-style: italic;
+    }
+    .main {
+        box-sizing: border-box;
+        padding: 0%;
+        margin: 0%;
+        font-size: 11px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      
+
+    }
+    p{
+        font-size: 16px;
+        font-family: sans-serif;
+        
+    }
+  </style>
+</head>
+<body>
+    <divb class="main">
+
+  <h1>UK Academic Year Finder</h1>
+  <p><b>Enter student age to find their academic year:</b></p>
+
+  
+
+  <input type="number" id="ageInput" placeholder="Enter age (e.g. 10)" min="1" max="100" required>
+  <br>
+  <button onclick="getAcademicStage()">Find Year</button>
+
+  <div id="result"></div>
+
+  <script>
+    function getAcademicStage() {
+      const age = parseInt(document.getElementById("ageInput").value);
+      const resultDiv = document.getElementById("result");
+
+      switch (age) {
+        case 5:
+          resultDiv.textContent = "The student is in: Year 1";
+          break;
+        case 6:
+          resultDiv.textContent = "The student is in: Year 2";
+          break;
+        case 7:
+          resultDiv.textContent = "The student is in: Year 3";
+          break;
+        case 8:
+          resultDiv.textContent = "The student is in: Year 4";
+          break;
+        case 9:
+          resultDiv.textContent = "The student is in: Year 5";
+          break;
+        case 10:
+          resultDiv.textContent = "The student is in: Year 6";
+          break;
+        case 11:
+          resultDiv.textContent = "The student is in: Year 7";
+          break;
+        case 12:
+          resultDiv.textContent = "The student is in: Year 8";
+          break;
+        case 13:
+          resultDiv.textContent = "The student is in: Year 9";
+          break;
+        case 14:
+          resultDiv.textContent = "The student is in: Year 10";
+          break;
+        case 15:
+          resultDiv.textContent = "The student is in: Year 11";
+          break;
+        case 16:
+          resultDiv.textContent = "The student is in: Year 12 (Sixth Form)";
+          break;
+        case 17:
+          resultDiv.textContent = "The student is in: Year 13 (Sixth Form)";
+          break;
+        case 18:
+        case 19:
+        case 20:
+        case 21:
+        case 22:
+          resultDiv.textContent = "The student is in: University";
+          break;
+        default:
+          if (age < 5) {
+            resultDiv.textContent = "Too young for Year 1";
+          } else if (age > 22) {
+            resultDiv.textContent = "Beyond standard education path";
+          } else {
+            resultDiv.textContent = "Please enter a valid age.";
+          }
+          break;
+      }
+    }
+  </script>
+    </div>
+</body>
+</html>
