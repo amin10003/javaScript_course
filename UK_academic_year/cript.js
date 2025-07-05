@@ -35,3 +35,6 @@ function getAcademicStage() {
     }
   }
   
+
+  let age = 17;
+  console.log(getAcademicStage)

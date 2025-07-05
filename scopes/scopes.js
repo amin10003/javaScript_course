@@ -10,7 +10,7 @@
 
 // console.log(lastName)
 
-            //GLOBLE SCOPE
+//             // GLOBLE SCOPE
 
 // let firstName = "Ibrahim"  //globle variable
 // console.log("this is not my name ", firstName )
@@ -23,8 +23,8 @@
 
 
 
-//const firstName = "Barni"
+// const firstName = "Barni"
 
-//console.log("my mother's name ", firstName)
+// console.log("my mother's name ", firstName)
 
 
