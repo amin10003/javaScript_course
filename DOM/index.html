@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .TheBigText {
+            font-size: 50px;
+            color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="firsth1" >I LOVE MOGADISHO(i wrote this code manually)</h1>
+    <h1 name ="bigcity" class="TheBigText">another Town</h1>
+    <h1 name ="bigcity" class="TheBigText">another Town</h1>
+    <h1 name ="bigcity">another Town</h1>
+
+    
+    <script>
+         for (let index = 0; index < 4; index++) {
+            let anotherH1 = document.createElement('h1');
+        anotherH1.textContent = "I LOVE NAIROBI (I created this code automatically using js)";
+        anotherH1.style.color = "blue"
+        document.body.appendChild(anotherH1);
+
+
+
+
+      
+       
+            
+        }
+
+        let paragraph = window.document.createElement('p')
+        paragraph.textContent = " Automated paragraph"
+        paragraph.style.color = "purple"
+        document.body.appendChild(paragraph);
+      //  document.body.removeChild(paragraph)
+
+        let h1 = document.getElementById('firsth1')
+      
+        // document.body.removeChild(h1)
+     
+
+
+        h1.style.color = "green"
+        h1.innerHTML= "manalagaraadba <p> well </p>"
+
+
+
+    
+        // let h1s = document.getElementsByName('bigcity');
+        // for(let i = 0; i < h1s.length; i++) {
+        //     h1s[i].style.color = "brown"
+        // }
+
+        // let h1s = document.getElementsByTagName('h1');
+        // for(let i = 0; i < h1s.length; i++) {
+        //     h1s[i].style.color = "brown"
+        // }
+
+
+       
+
+        // let h1s = document.getElementsByClassName('TheBigText');
+        // for(let i = 0; i < h1s.length; i++) {
+        //     h1s[i].style.color = "purple"
+        // }
+
+
+        let h1s = document.querySelectorAll(".TheBigText");
+        for(let i = 0; i < h1s.length; i++) {
+            h1s[i].style.color = "grey"
+        }
+
+        let firsth1 = document.querySelector("#firsth1") 
+        firsth1.style.color = "red"
+        firsth1.innerHTML = "home is the best <p> that is true </p>"
+
+       
+    
+       // alert("hi i am from js")
+       
+    </script>
+</body> 
+</html>
