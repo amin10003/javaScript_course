@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+
+</head>
+<body>
+    <!-- <button onclick="changeBackgroundClor()">Click me</button> -->
+    
+    <!-- <button onclick="changeBackgroundGreen()">Click me</button> -->
+     <button onmouseout="changeBackgroundGreen()" onmouseover="changeBackgroundClor()">Click me</button>
+    
+</body>
+<script>
+    function changeBackgroundClor(){
+        document.body.style.backgroundColor = "blue"
+    }
+    function changeBackgroundGreen(){
+        document.body.style.backgroundColor = "green"
+    }
+</script>
+</html>

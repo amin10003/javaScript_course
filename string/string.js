@@ -4,7 +4,7 @@
 
 
 // console.log(fullName.toUpperCase())
-///console.log(fullName.toUpperCase());
+// /console.log(fullName.toUpperCase());
 
 
 
@@ -20,8 +20,8 @@
 // const fullName4 = new String("Mohamed Amin"); //using the new keyword
 
 
-//let fullSentence = "Hello, my name is " + fullName1 + " and I am from " + town; //concatenation
-//console.log(fullSentence)
+// let fullSentence1 = "Hello, my name is " + fullName1 + " and I am from " + town; //concatenation
+// console.log(fullSentence)
 
 
 // let fullSentence = `Hello, my name is ${fullName1} and i am from ${town}`;
@@ -35,7 +35,7 @@
 
 
 
-// let fullName =  "Mohamed Amin";
+// let fullName7 =  "Mohamed Amin";
 // console.log(fullName.lastIndexOf("A"));
 
 // let fullName = "Mohamed Hasan Ali";
@@ -53,7 +53,7 @@
 
 
 
-let kenyanNationalAnthem = "O God of all creation,\n Bless this our land and nation,\n Justice be our shield and defender,\n May we dwell in unity,\n Peace and liberty,\n Plenty be found within our borders.\nLet one and all arise,\n With hearts both strong and true,\n Service be our earnest endeavour,\n And our homeland of Kenya,\n Heritage of splendour,\n Firm may we stand to defend.\n Let all with one accord,\n In common bond united,\n Build this our nation together,\n And the glory of Kenya,\n The fruit of our labour,\nFill every heart with thanksgiving.\n.......................................................\n";
+ let kenyanNationalAnthem = "O God of all creation,\n Bless this our land and nation,\n Justice be our shield and defender,\n May we dwell in unity,\n Peace and liberty,\n Plenty be found within our borders.\nLet one and all arise,\n With hearts both strong and true,\n Service be our earnest endeavour,\n And our homeland of Kenya,\n Heritage of splendour,\n Firm may we stand to defend.\n Let all with one accord,\n In common bond united,\n Build this our nation together,\n And the glory of Kenya,\n The fruit of our labour,\nFill every heart with thanksgiving.\n.......................................................\n";
 // console.log(kenyanNationalAnthem);
 
 
@@ -100,6 +100,7 @@ let kenyanNationalAnthem = "O God of all creation,\n Bless this our land and nat
 
 
 
+console.log(kenyanNationalAnthem.length)
 
 // console.log(kenyanNationalAnthem.repeat(3))
 

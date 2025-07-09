@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Keyboard Highlighter</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 40px;
+      background-color: #f0f0f0;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    .keyboard {
+      display: grid;
+      grid-template-columns: repeat(10, 50px);
+      gap: 10px;
+      max-width: 600px;
+    }
+
+    .key {
+      width: 50px;
+      height: 50px;
+      background: white;
+      border: 2px solid #aaa;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 6px;
+      text-transform: uppercase;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+
+    .key.active {
+      background-color: orange;
+      color: white;
+      border-color: black;
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+  <h1>Keyboard Highlighter</h1>
+  <div class="keyboard" id="keyboard">
+    <!-- JS will insert keys here -->
+  </div>
+
+  <script>
+    const keys = [
+      'q','w','e','r','t','y','u','i','o','p',
+      'a','s','d','f','g','h','j','k','l',
+      'z','x','c','v','b','n','m',' '
+    ];
+
+    const keyboardDiv = document.getElementById('keyboard');
+
+    // Create the virtual keyboard
+    keys.forEach(char => {
+      const key = document.createElement('div');
+      key.classList.add('key');
+      key.setAttribute('id', `key-${char === ' ' ? 'space' : char}`);
+      key.textContent = char === ' ' ? 'Space' : char;
+      keyboardDiv.appendChild(key);
+    });
+
+    // Listen for key presses
+    document.addEventListener('keydown', (event) => {
+      const keyPressed = event.key.toLowerCase();
+
+      const keyElement = document.getElementById(`key-${keyPressed === ' ' ? 'space' : keyPressed}`);
+      if (keyElement) {
+        keyElement.classList.add('active');
+
+        // Remove highlight after short delay
+        setTimeout(() => {
+          keyElement.classList.remove('active');
+        }, 300);
+      }
+    });
+  </script>
+</body>
+</html>
