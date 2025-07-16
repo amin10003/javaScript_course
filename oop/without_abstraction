@@ -1,0 +1,25 @@
+class CoffeeMachine {
+  boilWater() {
+    console.log("Boiling water...");
+  }
+
+  grindBeans() {
+    console.log("Grinding coffee beans...");
+  }
+
+  brew() {
+    console.log("Brewing coffee...");
+  }
+
+  makeCoffee() {
+    this.boilWater();
+    this.grindBeans();
+    this.brew();
+  }
+}
+
+// User calls each step manually (no abstraction)
+const machine = new CoffeeMachine();
+machine.boilWater();
+machine.grindBeans();
+machine.brew();
