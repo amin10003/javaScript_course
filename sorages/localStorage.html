@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LocalStorage Example</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .dark-mode {
+            background-color: #333;
+            color: #fff;
+        
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the LocalStorage Demo</h1>
+    <p>Select your preferences:</p>
+
+    <label for="theme">Select theme:</label>
+    <select name="theme" id="theme">
+        <option value="Light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+
+
+    <label for="language">Select Language</label>
+    <select name="Language" id="Language">
+        <option value="en">English</option>
+        <option value="kis">Kiswahili</option>
+    </select>
+    
+    <script>
+        //check and play saved preferences
+        window.onload = function() {
+            let savedTheme = LocalStorage.getItem("theme");
+            let savedLanguage =  LocalStorage.getItem("language");
+            if (savedTheme) {
+                document.body.classList.add(savedTheme + "-mode");
+                document.getElementById("theme").value = savedTheme;
+            }
+            
+            if (savedLanguage){
+                document.getElementById("Language").value = savedLanguage;
+            }
+        };
+
+
+        //saved preferences when user selects theme
+        document.getElementById("theme").addEventListener("change", function() {
+            let theme = this.value;
+            localStorage.setItem("theme", theme);
+
+
+            //apply the theme to the body element
+            document.body.classList.remove("light-mode", "dark-mode");
+            document.body.classList.add(theme + "-mode")
+
+      });
+
+      document.getElementById("Language").addEventListener("change", function() {
+        let language = this.value;
+        localStorage.setItem("language", language)
+      })
+
+
+    </script>
+
+
+
+</body>
+</html>

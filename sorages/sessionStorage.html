@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SessionStorage Example</title>
+
+</head>
+<body>
+    <h1>SessionStorage Form Example</h1>
+
+    <form id="userForm">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" required><br><br>
+
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" required><br><br>
+
+        <button type="submit">submit</button>
+    </form>
+
+
+    <script>
+        //on page load, check if data is saved in sessionStorage
+        window.onload = function() {
+              //Retrieve saved data from storage
+            let savedName = sessionStorage.getItem("name");
+            let saveEmail = sessionStorage.getItem("email");
+
+
+            //if data exists pre-fill the form field
+            if(savedName){
+                 document.getElementById("name").value = savedName;
+                }
+                if(saveEmail){
+                    document.getElementById("email").value = saveEmail;
+            }
+        };
+
+        //save form data to sessionStoragewhen the form is submitted
+        document.getElementById("userForm").addEventListener("submit", function(event) {
+            event.preventDefault(); //prevent form submission
+
+            //Get the form values
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            
+            
+            //Save the form values to sessionStorage
+            sessionStorage.setItem("name", name);
+            sessionStorage.setItem("email", email);
+
+            alert("Form data saved temporarily in session storage!");
+        });
+    </script>
+</body>
+</html>

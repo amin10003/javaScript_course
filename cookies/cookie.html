@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookies Example</title>
+    <style>
+        body.dark-mode {
+            background-color: #333;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Cookie Demo</h1>
+    <p>Select a theme</p>
+    <button id="darkButton">Dark Mode</button>
+     <button id="lightButton">Light Mode</button>
+
+
+     <script>
+        //function to set a cookie 
+        function setCookie(name, value, days) {
+            const d = new Date();
+            d.setTime(d.getTime() + (days * 24 * 60 * 1000));
+            const expires = "expires=" + d.toUTCString();
+            document.cookie = name + "=" + value + ";" + "path=/";
+        }
+
+        //function to get a cookie
+        function getCookie(name) {
+            let nameEQ = name + "=";
+            let ca = document.cookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i].trim();
+                if (c.indexOf(nameEQ)  === 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        }
+
+        //check if the the cookie is set
+        window.onload = function() {
+            const theme = getCookie("theme");
+            if (theme === "dark") {
+                 document.body.classList.add("dark-mode")
+            }
+           
+        };
+
+
+        //add event listner to buttons to set cookies
+        document.getElementById("darkButton").onclick = function() {
+            document.body.classList.add("dark-mode");
+            setCookie("theme", "dark", 7); //store the preference for 7 days
+        };
+
+        document.getElementById("lightButton").onclick = function() {
+            document.body.classList.remove("dark-mode");
+            setCookie("theme", "light", 7)
+        }
+     </script>
+</body>
+</html>
